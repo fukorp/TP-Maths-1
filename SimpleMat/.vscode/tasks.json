@@ -1,0 +1,50 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Compiler",
+            "type": "shell",
+            "command": "gcc",
+            "args": [
+                "-Wall",
+                "src/${fileBasename}",
+                "-std=c99",
+                "-pedantic",
+                "-o",
+                "bin/${fileBasenameNoExtension}",
+                "lib/simplemat.a"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceRoot}"]
+            },
+            
+            "detail": "compilateur : gcc"
+        },
+        {
+            "label": "Exécuter",
+            "type": "shell",
+            "command": "bin/./${fileBasenameNoExtension}",
+            "args": []
+            ,
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": {
+                "base": "$gcc",
+                "fileLocation": ["relative", "${workspaceRoot}"]
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": "Compiler"
+        }
+
+    ]
+}
