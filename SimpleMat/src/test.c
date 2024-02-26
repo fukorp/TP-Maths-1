@@ -24,6 +24,8 @@
 /*
 
 gcc -Wall -std=c99 -pedantic -g src/test.c -o bin/test lib/simplemat.a
+gcc src/test.c -o test.exe -Iinclude -Llib -lsimplemat -lm
+
 */
 
 #include <stdio.h>

@@ -26,6 +26,7 @@
 #include <float.h>
 #include <math.h>
 #include <time.h>
+
 #include <stdbool.h>
 #include "../include/sm_util.h"
 
